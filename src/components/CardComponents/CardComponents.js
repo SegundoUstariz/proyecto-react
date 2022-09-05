@@ -31,6 +31,12 @@ class CardComponents extends Component {
         })
      }
 
+     render() {
+         return (
+             <> </>
+         )
+     }
+
     }
 
 export default CardComponents;
