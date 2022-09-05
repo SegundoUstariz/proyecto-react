@@ -9,3 +9,4 @@ class Card extends Component{
 
 
 import './card.css';
+export default Card;
