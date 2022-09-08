@@ -2,29 +2,18 @@ import React from 'react';
 import Header from './components/Header/Header'
 import CardComponents from './components/CardComponents/CardComponents';
 import Footer from './components/Footer/Footer'
+import Peliculas from './components/Peliculas/Peliculas';
 
 function App() {
   return (
-    <>
-      <Header />
-      <div id="wrapper">
-
-
-
-        <div id="content-wrapper" className="d-flex flex-column">
-          {/* <!-- Main Content --> */}
-          <div id="content">
-
-            <CardComponents />
-
-
-          </div>
-
-        </div>
-
-      </div>
+    <React.Fragment>
+      <h1>My App in React</h1>
+      <main>
+        <h2>Personajes de Rick and Morty</h2>
+        <Peliculas />
+      </main>
       <Footer />
-    </>
+    </React.Fragment>
   );
 }
 

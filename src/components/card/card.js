@@ -1,29 +1,15 @@
-import React, {Component} from "react";
+import React from 'react';
 
-
-class Card extends Component{
-    constructor(props){
-        super(props);
-        this.state ={
-
-        }
-    }
-
-    render(){
-        console.log(this.props);
-        return(
-            <article className="tarjeta">
-                <img src={this.props.peliculas.image} alt={this.props.peliculas.titulo} />
-                <h3>{this.props.peliculas.titulo}</h3>
-                <p>Genero: {this.props.peliculas.genero}</p>
-                <p className="delete" onClick={()=>this.props.borrar(this.props.peliculas.id)}>Borrar</p>
-            </article>
-        ) 
-    }
-
+function Card(){
+    return (
+        <article className="data-detail">
+            <div className="card-content">
+                <h4>título de ficha</h4>
+                <p>datos de ficha</p>
+            </div>
+            <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
+        </article>
+    )
 }
 
-
-
-import './card.css';
 export default Card;

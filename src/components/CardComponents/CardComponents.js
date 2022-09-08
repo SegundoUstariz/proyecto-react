@@ -1,50 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class CardComponents extends Component {
-    constructor(){
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            peliculas:[],
-            titulo: [],
-            genero: [],
-            viewMore: false,
-            text: "ver mas",
-            peliculasIniciales: [],
-            page: 1,
-           cargando: false,
-           cambiarOrientacion: false,
-           text:'fas fa-align-justify',
-            }
 
         }
-    componentDidMount() {
-        const url= 'https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32'
-        console.log(url);
-        fetch(url)
-        .then(respuesta => respuesta.json())
-        .then(data => {
-            console.log(data);
-            this.setState( {
-                
-                peliculas: data.results,
-                titulo: results.title
-    
-            }) 
-        })
-     }
-
-     render() {
-         return (
-             
-            <React.Fragment>   
-             {
-                 this.state.peliculas.map( (unaPelicula, idx) => <Card key={peliculas.titulo + idx} titulo={unaPelicula}>
-             
-             </React.Fragment>   
-              
-         )
-     }
-
     }
 
-export default CardComponents;
+    render() {
+        console.log(this.props);
+        return (
+            <article className='character-card'>
+                <img src={this.props.datosPela.poster_path} alt="" />
+                <h2>{this.props.datosPela.original_title}</h2> 
+                <p>{this.props.datosPela.overview}</p> 
+                <p>Ver más</p>
+            </article>
+
+        )
+    }
+
+}
+
+export default CardComponents
