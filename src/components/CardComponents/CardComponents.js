@@ -5,10 +5,12 @@ class CardComponents extends Component {
         super()
         this.state = {
             peliculas:[],
+            titulo: [],
+            genero: [],
             viewMore: false,
             text: "ver mas",
             peliculasIniciales: [],
-            pagina: 1,
+            page: 1,
            cargando: false,
            cambiarOrientacion: false,
            text:'fas fa-align-justify',
@@ -23,10 +25,10 @@ class CardComponents extends Component {
         .then(data => {
             console.log(data);
             this.setState( {
-                cargando: true,
+                
                 peliculas: data.results,
-                //peliculasIniciales: data.results,
-                pagina: 2,
+                titulo: results.title
+    
             }) 
         })
      }
@@ -36,7 +38,7 @@ class CardComponents extends Component {
              
             <React.Fragment>   
              {
-                 this.state.peliculas.map( (oneCharacter, idx) => <Card key={oneCharacter.name + idx} characterInfo={oneCharacter}>
+                 this.state.peliculas.map( (unaPelicula, idx) => <Card key={peliculas.titulo + idx} titulo={unaPelicula}>
              
              </React.Fragment>   
               
