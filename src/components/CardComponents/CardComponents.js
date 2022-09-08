@@ -25,7 +25,7 @@ class CardComponents extends Component {
             this.setState( {
                 cargando: true,
                 peliculas: data.results,
-                peliculasIniciales: data.results,
+                //peliculasIniciales: data.results,
                 pagina: 2,
             }) 
         })
@@ -33,7 +33,13 @@ class CardComponents extends Component {
 
      render() {
          return (
-             <> </>
+             
+            <React.Fragment>   
+             {
+                 this.state.peliculas.map( (oneCharacter, idx) => <Card key={oneCharacter.name + idx} characterInfo={oneCharacter}>
+             
+             </React.Fragment>   
+              
          )
      }
 
