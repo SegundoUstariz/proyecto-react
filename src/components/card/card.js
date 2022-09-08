@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Card(){
-    return (
-        <article className="data-detail">
-            <div className="card-content">
-                <h4>título de ficha</h4>
-                <p>datos de ficha</p>
-            </div>
-            <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
-        </article>
-    )
+class Card extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            verMas: false,
+            text: "Ver Mas"
+        }
+    }
+
+    
 }
 
 export default Card;
