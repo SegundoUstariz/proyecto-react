@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import CardComponents from '../CardComponents/CardComponents';
+import Filtrados from '../Filtrados/Filtrados';
+import Formulario from '../Formulario/Formulario';
+
 class Peliculas extends Component{
     constructor(){
         super()
@@ -18,11 +21,20 @@ class Peliculas extends Component{
             .catch()
     }
 
+    filtrarPeliculas(textoAFiltrar){
+        
+        let peliculasFiltradas = this.state.peliculas.filter( unaPela => unaPela.titulo.toLowerCase().includes(textoAFiltrar.toLowerCase()))
+
+        this.setState({
+            peliculas: peliculasFiltradas,
+        })
+    }
 
     render(){
         console.log(this.state.peliculas);
         return(
             <React.Fragment>
+                 <Filtrados filtrarPeliculas={(textoABuscar)=>this.filtrarPeliculas(textoABuscar)} />
                 <button> Traer más </button>
                 <section className='cardContainer'>
                     { 

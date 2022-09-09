@@ -3,13 +3,15 @@ import Header from './components/Header/Header'
 import CardComponents from './components/CardComponents/CardComponents';
 import Footer from './components/Footer/Footer'
 import Peliculas from './components/Peliculas/Peliculas';
+import Formulario from './components/Formulario/Formulario';
 
 function App() {
   return (
     <React.Fragment>
-      <h1>My App in React</h1>
+      <Formulario />
       <main>
-        <h2>Personajes de Rick and Morty</h2>
+        
+        <h2>Películas</h2>
         <Peliculas />
       </main>
       <Footer />
