@@ -21,20 +21,19 @@ class Peliculas extends Component{
             .catch()
     }
 
-    filtrarPeliculas(textoAFiltrar){
-        
-        let peliculasFiltradas = this.state.peliculas.filter( unaPela => unaPela.titulo.toLowerCase().includes(textoAFiltrar.toLowerCase()))
-
-        this.setState({
-            peliculas: peliculasFiltradas,
-        })
-    }
+  
 
     render(){
         console.log(this.state.peliculas);
+        const filtrarPeliculas = (filtradas) => {
+            this.setState({
+                peliculas: filtradas,
+            })
+        }
+           ;     
         return(
             <React.Fragment>
-                 <Filtrados filtrarPeliculas={(textoABuscar)=>this.filtrarPeliculas(textoABuscar)} />
+                 <Filtrados pelis = {this.state.peliculas} actualizarEstado = {filtrarPeliculas} />
                 <button> Traer más </button>
                 <section className='cardContainer'>
                     { 
