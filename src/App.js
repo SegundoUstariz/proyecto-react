@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import CardComponents from './components/CardComponents/CardComponents';
 import Footer from './components/Footer/Footer'
 import Peliculas from './components/Peliculas/Peliculas';
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 
 
 function App() {
