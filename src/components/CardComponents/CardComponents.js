@@ -1,6 +1,6 @@
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
-import React, { Component } from 'react';
 
+import React, { Component } from 'react';
+import './CardComponents.css'
 class CardComponents extends Component {
     constructor(props){
         super(props)
@@ -16,7 +16,7 @@ class CardComponents extends Component {
     render() {
         console.log(this.props);
         return (
-            <article className='character-card'>
+            <article className='card-components'>
                 <img src={"https://image.tmdb.org/t/p/w500/"+this.props.datosPela.poster_path} alt="" />
                 <h2>{this.props.datosPela.original_title}</h2> 
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CardComponents from '../CardComponents/CardComponents';
 import Filtrados from '../Filtrados/Filtrados';
+import './Peliculas.css'
 
 
 class Peliculas extends Component{
