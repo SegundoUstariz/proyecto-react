@@ -9,7 +9,7 @@ footer {
 .footer-team {
     display:flex;
     flex-direction:row;
-    align-content:center;
+    align-items:center;
     color:white;
     list-style: none;
     font-family: 'Roboto', sans-serif;
@@ -17,5 +17,5 @@ footer {
 }
 
 .footer-team li{
-    padding: 0px 10px;
+    padding: 0px ;
 }
