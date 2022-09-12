@@ -8,7 +8,7 @@ import './Header.css'
 
             <header>
                 <img/>
-                    <ul>
+                    <ul className='main-nav'>
                         <li>Home</li>
                         <li>Favoritos</li>
                         <li>Ver todas</li>

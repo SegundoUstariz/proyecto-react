@@ -8,9 +8,8 @@ import Peliculas from './components/Peliculas/Peliculas';
 function App() {
   return (
     <React.Fragment>
-    
+    <Header/>
       <main>
-        
         <h2>Películas</h2>
         <Peliculas />
       </main>
