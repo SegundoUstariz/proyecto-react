@@ -21,6 +21,17 @@ class Peliculas extends Component{
             .catch()
     }
 
+    traerMas(){
+        //Traer la siguiente página de peliculas
+        fetch(this.state.nextUrl)
+            .then( res => res.json())
+            .then( data => this.setState({
+                peliculas: data.results.concat(this.state.peliculas),
+                nextUrl: data.results.next
+            }))
+            .catch()
+    }
+
   
 
     render(){
@@ -34,7 +45,7 @@ class Peliculas extends Component{
         return(
             <React.Fragment>
                  <Filtrados pelis = {this.state.peliculas} actualizarEstado = {filtrarPeliculas} />
-                <button> Traer más </button>
+                 <button onClick={()=>this.traerMas()}> Traer más </button>
                 <section className='cardContainer'>
                     { 
                         this.state.peliculas.map( (unaPela, idx) => <CardComponents key={unaPela.name+idx} datosPela={unaPela}/>)
