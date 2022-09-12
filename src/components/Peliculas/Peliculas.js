@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CardComponents from '../CardComponents/CardComponents';
 import Filtrados from '../Filtrados/Filtrados';
-import Formulario from '../Formulario/Formulario';
+
 
 class Peliculas extends Component{
     constructor(){
