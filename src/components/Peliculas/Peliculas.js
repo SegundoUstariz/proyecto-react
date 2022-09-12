@@ -9,32 +9,28 @@ class Peliculas extends Component{
         super()
         this.state={
             peliculas:[], //aparecer pelas
-            page:1
-            
         }
     }
 
     componentDidMount(){
         //BUscamos datos
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=1${this.state.page}`)
+        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32')
             .then( res => res.json())
             .then( data => this.setState({
-                peliculas: data.results,
-                page: this.state.page+1
+                peliculas: data.results
             }))
             .catch()
     }
 
     traerMas(){
         //Traer la siguiente página de peliculas
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=1${this.state.page}`)
+        fetch(this.state.nextUrl)
             .then( res => res.json())
             .then( data => this.setState({
                 peliculas: data.results.concat(this.state.peliculas),
-                page: this.state.page+1
-    
+                nextUrl: data.results.next
             }))
-            .catch(e=>console.log(e))
+            .catch()
     }
 
   
