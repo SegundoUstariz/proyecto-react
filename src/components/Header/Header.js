@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
 import './Header.css'
 
 
@@ -6,12 +7,12 @@ import './Header.css'
 
         return(
 
-            <header>
-                <img/>
-                    <ul className='main-nav'>
-                        <li>Home</li>
-                        <li>Favoritos</li>
-                        <li>Ver todas</li>
+            <header className='navbar'>
+                <Link to = '/'><img className='logo' src='/logofiz.png' alt=''/></Link>
+                    <ul>
+                        <li> <Link to = "/">Home</Link></li>
+                        <li> <Link to = "/Favoritos">Favoritos</Link></li>
+                        <li> <Link to = "/VerMas">Ver Todas</Link></li>
                     </ul>
             </header>
         )

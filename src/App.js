@@ -1,17 +1,23 @@
 import React from 'react';
 import Header from './components/Header/Header'
-import CardComponents from './components/CardComponents/CardComponents';
+//import CardComponents from './components/CardComponents/CardComponents';
 import Footer from './components/Footer/Footer'
-import Peliculas from './components/Peliculas/Peliculas';
-
+//import Peliculas from './components/Peliculas/Peliculas';
+import { Route, Switch } from 'react-router-dom'
+import NotFound from './screens/NotFound';
+import Home from './screens/Home';
+import VerMas from './screens/VerMas'
 
 function App() {
   return (
     <React.Fragment>
-    <Header/>
+      <Header />
       <main>
-        <h2>Películas</h2>
-        <Peliculas />
+        <Switch>
+          <Route path='/' exact={true} component={Home} />
+          <Route path='/todas' component={VerMas} />
+          <Route path='' exact={true} component={NotFound} />
+        </Switch>
       </main>
       <Footer />
     </React.Fragment>

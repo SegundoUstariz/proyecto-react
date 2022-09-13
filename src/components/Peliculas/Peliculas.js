@@ -15,7 +15,7 @@ class Peliculas extends Component{
 
     componentDidMount(){
         //BUscamos datos
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=1${this.state.page}`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=${this.state.page}`)
             .then( res => res.json())
             .then( data => this.setState({
                 peliculas: data.results,
@@ -26,7 +26,7 @@ class Peliculas extends Component{
     
     traerMas(){
         //Traer la siguiente página de peliculas
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=1${this.state.page}`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=${this.state.page}`)
             .then( res => res.json())
             .then( data => this.setState({
                 peliculas: data.results.concat(this.state.peliculas),
