@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import './CardComponents.css'
+import {Link} from 'react-router-dom'
 class CardComponents extends Component {
     constructor(props){
         super(props)
@@ -28,7 +29,9 @@ class CardComponents extends Component {
                     {this.state.verMas ? "Ver Menos" : "Ver Mas" }
                 </button>
                 <button>
-                    Ir a detalle
+                <Link to={'/Detalle/'+this.props.datosPela.id}> 
+                Ir a detalle
+                </Link>    
                 </button>
                 <button>
                     Anadir a Favoritos

@@ -51,7 +51,7 @@ class Peliculas extends Component{
                  <button onClick={()=>this.traerMas()}> Traer más </button>
                 <section className='cardContainer'>
                     { 
-                        this.state.peliculas.map( (unaPela, idx) => <CardComponents key={unaPela.name+idx} datosPela={unaPela}/>)
+                        this.state.peliculas.map( (unaPela, idx) => <CardComponents key={unaPela.id} datosPela={unaPela}/>)
                     }
                 </section>
             </React.Fragment>

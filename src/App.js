@@ -6,7 +6,8 @@ import Footer from './components/Footer/Footer'
 import { Route, Switch } from 'react-router-dom'
 import NotFound from './screens/NotFound';
 import Home from './screens/Home';
-import VerMas from './screens/VerMas'
+import VerMas from './screens/VerMas';
+import Detalle from './components/Detalle/Detalle'
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
       <Header />
       <main>
         <Switch>
+         <Route path='/Detalle/:id' component={Detalle}/>
+         <Route path='/todas' component={VerMas} />
           <Route path='/' exact={true} component={Home} />
-          <Route path='/todas' component={VerMas} />
           <Route path='' exact={true} component={NotFound} />
+          
         </Switch>
       </main>
       <Footer />
