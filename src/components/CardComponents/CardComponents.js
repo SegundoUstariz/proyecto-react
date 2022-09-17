@@ -24,6 +24,13 @@ class CardComponents extends Component {
     const ls=JSON.parse(localStorage.getItem("items"));
     console.log(ls)
   }
+  quitarFav(id){ //terminar el filtro
+    const item = JSON.parse(localStorage.getItem("items"));
+    const filtrados = item.filter(fav => fav.id !== id);
+    localStorage.setItem("items", JSON.stringify(filtrados));
+    const ls=JSON.parse(localStorage.getItem("items"));
+    console.log(ls)
+  }
 
   render() {
     //console.log(this.props);
@@ -46,8 +53,8 @@ class CardComponents extends Component {
         <button>
           <Link to={"/Detalle/" + this.props.datosPela.id}>Ir a detalle</Link>
         </button>
-        <button onClick={() => this.addfav(this.props.datosPela)}>
-          Anadir a Favoritos
+        <button onClick={() => this.quitarFav(this.props.datosPela.id)}>
+          Quitar de Favoritos
         </button>
       </article>
     );
