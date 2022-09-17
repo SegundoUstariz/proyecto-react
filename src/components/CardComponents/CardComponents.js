@@ -12,8 +12,8 @@ class CardComponents extends Component {
 
   verMas() {
     this.setState({
-      verMas: !this.state.verMas,
-      ...this.state,
+        ...this.state,
+        verMas: !this.state.verMas,
     });
   }
 
@@ -33,7 +33,7 @@ class CardComponents extends Component {
   }
 
   render() {
-    //console.log(this.props);
+    console.log(this.props);
     return (
       <article className="card-components">
         <img
