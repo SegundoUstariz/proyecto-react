@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './Detalle.css'
 
 const Detalle = (props) => {
     const [state, setState] = useState(null);
@@ -18,11 +19,12 @@ const Detalle = (props) => {
              {
             state !== null
             ? (
-                <div>
+                <div className='detalles'>
                 <h3>{state.title} </h3>
                 <img src= {"https://image.tmdb.org/t/p/w500/"+state.poster_path} alt="" />
-                <h2>{state.genre} </h2>
-                <p>{state.overview} </p>
+                <p>SINOPSIS: {state.overview} </p>
+            <p> RATING: {state.popularity}</p>
+            <p> FECHA DE ESTRENO: {state.release_date} </p>
 
             </div>
             ): 

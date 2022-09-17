@@ -39,5 +39,5 @@
 }
 
 .navbar ul li:hover::before{
-  width: 100%;
+  width: 120%;
 }
