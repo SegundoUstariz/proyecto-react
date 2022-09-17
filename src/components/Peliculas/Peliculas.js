@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardComponents from '../CardComponents/CardComponents';
 import Filtrados from '../Filtrados/Filtrados';
 import './Peliculas.css'
+import {Link} from 'react-router-dom';
 
 
 class Peliculas extends Component{
@@ -48,6 +49,9 @@ class Peliculas extends Component{
            ;     
         return(
             <React.Fragment>
+                <button>
+                    <Link to="/Cartelera"> Ver las nuevas peliculas</Link>
+                </button>
                  <Filtrados pelis = {this.state.peliculas} actualizarEstado = {filtrarPeliculas} />
                  <button onClick={()=>this.traerMas()}> Traer más </button>
                 <section className='cardContainer'>
@@ -55,6 +59,7 @@ class Peliculas extends Component{
                         this.state.peliculas.map( (unaPela, idx) => <CardComponents key={unaPela.id} datosPela={unaPela}/>)
                     }
                 </section>
+                
             </React.Fragment>
         )
     }
