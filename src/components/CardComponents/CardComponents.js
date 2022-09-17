@@ -31,6 +31,7 @@ class CardComponents extends Component {
     const filtrados = item.filter((fav) => fav.id !== id);
     localStorage.setItem("items", JSON.stringify(filtrados));
     this.setState({...this.state, favoritos: false});
+    window.location.reload();
   }
   componentDidMount() {
     const item = JSON.parse(localStorage.getItem("items"));
