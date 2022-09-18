@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; 
 import './Detalle.css'
-import config from '../../config/config'
+
 
 const Detalle = (props) => {
     const [state, setState] = useState(null);
