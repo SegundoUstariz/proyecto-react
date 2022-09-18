@@ -25,7 +25,6 @@ class CardComponents extends Component {
     this.setState({...this.state, favoritos: true});
   }
   quitarFav(id) {
-    //terminar el filtro
     const item = JSON.parse(localStorage.getItem("items"));
     const filtrados = item.filter((fav) => fav.id !== id);
     localStorage.setItem("items", JSON.stringify(filtrados));

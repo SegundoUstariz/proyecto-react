@@ -9,7 +9,7 @@ function Favoritos() {
     console.log(item);
   };
 
-  useEffect(()=>{
+  useEffect(()=>{ //seria como el component did mount
     getFav();
   },[]);
   return (
