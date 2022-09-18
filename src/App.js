@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./screens/NotFound";
 import Home from "./screens/Home";
-import Detalle from "./components/Detalle/Detalle";
+import Detalle from "./screens/Detalle/Detalle";
 import Favoritos from "./screens/Favoritos";
 import Cartelera from "./screens/Cartelera";
 
