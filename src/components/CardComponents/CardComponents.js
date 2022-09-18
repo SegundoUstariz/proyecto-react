@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import "./CardComponents.css";
 import { Link } from "react-router-dom";
-import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers";
 class CardComponents extends Component {
   constructor(props) {
     super(props);
     this.state = {
       verMas: false,
       items: [],
-      favoritos: null,
+      favoritos: [],
     };
   }
 
@@ -33,21 +32,21 @@ class CardComponents extends Component {
     this.setState({...this.state, favoritos: false});
     window.location.reload();
   }
-  componentDidMount() {
-    const item = JSON.parse(localStorage.getItem("items"));
-    const filtrados = item.filter((fav) => fav.id === this.props.datosPela.id);
-    if (filtrados.length >= 1) {
-      this.setState({
-        ...this.state,
-        favoritos: true,
+ componentDidMount() {
+ const item = JSON.parse(localStorage.getItem("items"));
+  const filtrados = item.filter((fav) => fav.id === this.props.datosPela.id);
+   if (filtrados.length >= 1) {
+    this.setState({
+      ...this.state,
+       favoritos: true,
       });
-    } else {
-      this.setState({
-        ...this.state,
-        favoritos: false,
+  } else {
+   this.setState({
+    ...this.state,
+      favoritos: false,
       });
-    }
-  }
+ }
+ }
   render() {
     console.log(this.props);
     return (
@@ -79,6 +78,7 @@ class CardComponents extends Component {
             Agregar de favoritos
           </button>
         )}
+    
       </article>
     );
   }
