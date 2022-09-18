@@ -10,6 +10,7 @@ class Peliculas extends Component{
         super()
         this.state={
             peliculas:[], //aparecer pelas
+            peliculasNuevas:[],
             page:1
         }
     }
@@ -24,6 +25,19 @@ class Peliculas extends Component{
                 page:this.state.page+1
             }))
             .catch()
+
+            fetch(
+                `https://api.themoviedb.org/3/movie/upcoming?api_key=eb09954096929ff16616027732037e32&language=en-US`
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  this.setState({
+                    ...this.state,
+                    peliculasNuevas:data.results
+                   });
+                  console.log("peliculas Nuevas", data.results);
+                })
+                .catch();
     }
     
     traerMas(){
@@ -67,9 +81,19 @@ class Peliculas extends Component{
                     }
                 </section>
                 <h3>Peliculas nuevas</h3>
-                <button>
-                    <Link to="/Cartelera"> Ver las nuevas peliculas</Link>
-                </button>
+                <section className='cardContainer'>
+                {
+                    this.state.peliculasNuevas.map(
+                        (unaPela, i) => {
+                            if(i<=5){
+                                return(<CardComponents key={unaPela.id} datosPela={unaPela}/>)
+                            }
+                            else{
+                                return(<React.Fragment/>)
+                            }
+                        })
+                }
+                </section>
                 
             </React.Fragment>
         )
