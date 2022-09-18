@@ -49,16 +49,27 @@ class Peliculas extends Component{
            ;     
         return(
             <React.Fragment>
+              
+                 <Filtrados pelis = {this.state.peliculas} actualizarEstado = {filtrarPeliculas} />
+                 <button onClick={()=>this.traerMas()}> Traer más </button>
+                 <h3>Peliculas populares</h3>
+                <section className='cardContainer'>
+                    { 
+                        this.state.peliculas.map(
+                            (unaPela, i) => {
+                                if(i<=5){
+                                    return(<CardComponents key={unaPela.id} datosPela={unaPela}/>)
+                                }
+                                else{
+                                    return(<React.Fragment/>)
+                                }
+                            })
+                    }
+                </section>
+                <h3>Peliculas nuevas</h3>
                 <button>
                     <Link to="/Cartelera"> Ver las nuevas peliculas</Link>
                 </button>
-                 <Filtrados pelis = {this.state.peliculas} actualizarEstado = {filtrarPeliculas} />
-                 <button onClick={()=>this.traerMas()}> Traer más </button>
-                <section className='cardContainer'>
-                    { 
-                        this.state.peliculas.map( (unaPela, idx) => <CardComponents key={unaPela.id} datosPela={unaPela}/>)
-                    }
-                </section>
                 
             </React.Fragment>
         )
